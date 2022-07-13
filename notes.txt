@@ -13,3 +13,11 @@ for relational bd and migration
 npm i prisma
 npm i @prisma/client
 npx prisma init
+
+for prisma push model to heroku
+
+npx prisma db push --preview-feature
+
+for link to a heroku project
+
+heroku git:remote -a <name of project>
