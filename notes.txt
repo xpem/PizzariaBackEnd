@@ -7,6 +7,7 @@ npm i ts-node-dev -D
 npm i express-async-errors
 npm i cors
 npm i @types/cors -D
+npm i dotenv
 
 for relational bd and migration
 
@@ -27,4 +28,9 @@ for password encrypt
 
 npm i bcryptjs
 npm i @types/bcryptjs -D
+
+for jwt 
+
+npm i jsonwebtoken
+npm i @types/jsonwebtoken -D
 
