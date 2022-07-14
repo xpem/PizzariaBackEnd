@@ -21,3 +21,10 @@ npx prisma db push --preview-feature
 for link to a heroku project
 
 heroku git:remote -a <name of project>
+
+
+for password encrypt
+
+npm i bcryptjs
+npm i @types/bcryptjs -D
+
