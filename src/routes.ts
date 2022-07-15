@@ -1,4 +1,7 @@
 import { Router } from "express";
+import multer from "multer";
+import uploadConfig from "./config/multer";
+
 import { CreateUserController } from "./controllers/user/CreateUserController";
 import { AuthUserController } from "./controllers/user/AuthUserController";
 import { DetailUserController } from "./controllers/user/DetailUserController";
@@ -6,10 +9,8 @@ import { isAuthenticated } from "./middlewares/isAuthenticated";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
 import { ListCategoryController } from "./controllers/category/ListCategoryController";
 import { CreateProductController } from "./controllers/product/CreateProductController";
-
-import multer from "multer";
-import uploadConfig from "./config/multer";
 import { ListByCategoryController } from "./controllers/product/ListByCategoryController";
+import { CreateOrderController } from "./controllers/order/CreateOrderController";
 
 const router = Router();
 
@@ -39,7 +40,13 @@ router.post(
   new CreateProductController().handle
 );
 
-router.get("/category/product", isAuthenticated, new ListByCategoryController().handle);
+router.get(
+  "/category/product",
+  isAuthenticated,
+  new ListByCategoryController().handle
+);
 
+//Order Routes
+router.post("/order", isAuthenticated, new CreateOrderController().handle);
 
 export { router };
