@@ -23,7 +23,6 @@ for link to a heroku project
 
 heroku git:remote -a <name of project>
 
-
 for password encrypt
 
 npm i bcryptjs
@@ -34,3 +33,7 @@ for jwt
 npm i jsonwebtoken
 npm i @types/jsonwebtoken -D
 
+for images upload
+
+npm i multer
+npm i @types/multer
