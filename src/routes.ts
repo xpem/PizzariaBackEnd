@@ -18,6 +18,7 @@ import { SendOrderController } from "./controllers/order/SendOrderController";
 import { ListOrderController } from "./controllers/order/ListOrderController";
 import { DetailOrderController } from "./controllers/order/DetailOrderController";
 import { FinishOrderController } from "./controllers/order/FinishOrderController";
+import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
 
 const router = Router();
 
@@ -38,6 +39,10 @@ router.post(
 );
 
 router.get("/category", isAuthenticated, new ListCategoryController().handle);
+
+router.get("/category/:id", isAuthenticated, new ListCategoryController().handle);
+
+router.delete("/category/:id", isAuthenticated, new DeleteCategoryController().handle);
 
 //Product Routes
 router.post(
