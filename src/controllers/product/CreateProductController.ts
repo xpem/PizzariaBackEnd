@@ -9,14 +9,14 @@ class CreateProductController {
       throw new Error("Upload file error");
     }
 
-    const { originalname, filename: banner } = req.file;
+    // const { originalname, filename: banner } = req.file;
 
     const createProductService = new CreateProductService();
     const product = await createProductService.execute({
       name,
       price,
       description,
-      banner,
+      banner: null,
       category_id,
     });
 

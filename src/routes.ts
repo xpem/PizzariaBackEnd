@@ -20,6 +20,7 @@ import { DetailOrderController } from "./controllers/order/DetailOrderController
 import { FinishOrderController } from "./controllers/order/FinishOrderController";
 import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
 import { UpdateCategoryController } from "./controllers/category/UpdateCategoryController";
+import { ListProductController } from "./controllers/product/ListProductController";
 
 const router = Router();
 
@@ -63,9 +64,11 @@ router.delete(
 router.post(
   "/product",
   isAuthenticated,
-  upload.single("file"),
+  // upload.single("file"),
   new CreateProductController().handle
 );
+
+router.get("/product", isAuthenticated, new ListProductController().handle);
 
 router.get(
   "/category/product",
