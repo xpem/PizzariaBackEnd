@@ -2,15 +2,19 @@ import prismaClient from "../../prisma";
 
 class ListProductService {
   async execute() {
-    const res = await prismaClient.product.findMany({
+    const res = await prismaClient.category.findMany({
       select: {
-        id: true,
-        price: true,
-        description: true,
         name: true,
-        category: { select: { id: true, name: true } },
+        products: {
+          select: {
+            id: true,
+            price: true,
+            description: true,
+            name: true,
+          },
+        },
       },
-      orderBy: { category_id: "desc" },
+      orderBy: { name: "asc" },
     });
 
     return res;
