@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { ListProductService } from "../../services/product/ListProductService";
+import { ListByCategoryService } from "../../services/product/ListByCategoryService";
 
 class ListProductController {
   async handle(req: Request, res: Response) {
-    const listProductService = new ListProductService();
-    const products = await listProductService.execute();
+    const listByCategoryService = new ListByCategoryService();
+    const products = await listByCategoryService.ExecuteGroupedByCategories();
 
     return res.json(products);
   }

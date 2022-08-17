@@ -10,7 +10,7 @@ class ListByCategoryController {
 
     const category_id = req.query.category_id as string;
     const listByCategoryService = new ListByCategoryService();
-    const products = await listByCategoryService.execute({ category_id });
+    const products = await listByCategoryService.ExecuteByCaterogyid({ category_id });
 
     return res.json(products);
   }

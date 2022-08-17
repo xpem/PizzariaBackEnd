@@ -7,7 +7,7 @@ class DeleteCategoryController {
     const id = req.params.id as string;
 
     const listByCategoryService = new ListByCategoryService();
-    const products = await listByCategoryService.execute({ category_id: id });
+    const products = await listByCategoryService.ExecuteByCaterogyid({ category_id: id });
 
     if (products.length === 0) {
       const deleteCategoryService = new DeleteCategoryService();
