@@ -4,7 +4,7 @@ interface ProductRequest {
   name: string;
   price: string;
   description: string;
-  banner: string;
+  // banner: string;
   category_id: string;
 }
 
@@ -13,7 +13,6 @@ class CreateProductService {
     name,
     price,
     description,
-    banner,
     category_id,
   }: ProductRequest) {
     const product = await prismaClient.product.create({
@@ -21,7 +20,6 @@ class CreateProductService {
         name,
         price,
         description,
-        banner,
         category_id,
       },
     });

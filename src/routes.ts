@@ -21,6 +21,7 @@ import { FinishOrderController } from "./controllers/order/FinishOrderController
 import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
 import { UpdateCategoryController } from "./controllers/category/UpdateCategoryController";
 import { ListProductController } from "./controllers/product/ListProductController";
+import { UpdateProductController } from "./controllers/product/UpdateProductController";
 
 const router = Router();
 
@@ -69,6 +70,12 @@ router.post(
 );
 
 router.get("/product", isAuthenticated, new ListProductController().handle);
+
+router.put(
+  "/product/:id",
+  isAuthenticated,
+  new UpdateProductController().handle
+);
 
 router.get(
   "/category/product",
