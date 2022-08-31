@@ -17,7 +17,7 @@ class DeleteCategoryController {
     } else {
       return res
         .status(409)
-        .json("Não é possível exclur Categoria com Produtos associados a ela");
+        .json("Não é possível excluir Categoria com Produtos associados a ela");
     }
   }
 }

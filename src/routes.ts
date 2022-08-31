@@ -22,6 +22,7 @@ import { DeleteCategoryController } from "./controllers/category/DeleteCategoryC
 import { UpdateCategoryController } from "./controllers/category/UpdateCategoryController";
 import { ListProductController } from "./controllers/product/ListProductController";
 import { UpdateProductController } from "./controllers/product/UpdateProductController";
+import { DeleteProductController } from "./controllers/product/DeleteProductController";
 
 const router = Router();
 
@@ -75,6 +76,12 @@ router.put(
   "/product/:id",
   isAuthenticated,
   new UpdateProductController().handle
+);
+
+router.delete(
+  "/product/:id",
+  isAuthenticated,
+  new DeleteProductController().handle
 );
 
 router.get(
