@@ -72,6 +72,8 @@ router.post(
 
 router.get("/product", isAuthenticated, new ListProductController().handle);
 
+router.get("/product/:id", isAuthenticated, new ListProductController().handle);
+
 router.put(
   "/product/:id",
   isAuthenticated,
