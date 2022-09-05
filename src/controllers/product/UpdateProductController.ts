@@ -12,7 +12,7 @@ class UpdateProductController {
       name,
     });
 
-    if (productByname.length === 0) {
+    if ((productByname.length === 0) || (id === productByname[0].id)) {
       const updateProductService = new UpdateProductService();
       const product = await updateProductService.execute({
         id,
