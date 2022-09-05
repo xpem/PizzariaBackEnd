@@ -9,10 +9,16 @@ class DetailProductService {
 
     return products;
   }
-  
+
   async executeById({ id }) {
     const products = await prismaClient.product.findMany({
-      select: { id: true, price: true, description: true, name: true },
+      select: {
+        id: true,
+        price: true,
+        description: true,
+        name: true,
+        category_id: true,
+      },
       where: { id },
     });
 
